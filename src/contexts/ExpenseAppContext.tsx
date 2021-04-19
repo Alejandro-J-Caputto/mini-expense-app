@@ -4,7 +4,11 @@ import { ExpenseItems } from '../services/expensesService/useExpenseService'
 
 interface ExpenseContextValues {
   expenseResults: ExpenseItems[],
-  setExpensesResults: React.Dispatch<React.SetStateAction<ExpenseItems[]>>,
+  // setExpensesResults: React.Dispatch<React.SetStateAction<ExpenseItems[]>>,
+  dispatchExpense:  React.Dispatch<{
+    type: string;
+    payload: ExpenseItems;
+}>,
   useExpenseService: () => { expensesAPI: ExpenseItems[] }
 }
 
