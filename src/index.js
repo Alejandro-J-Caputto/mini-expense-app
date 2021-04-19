@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
+import {ExpensesApp} from './ExpensesApp';
 import './css/styles.css'
-import App from './App';
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ExpensesApp />, document.getElementById('root'));
 
 

@@ -1,0 +1,15 @@
+.expense-item__date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  border: 2px solid $color-white;
+  border-radius: .7rem;
+  color: $color-white;
+  background-color: $color-pink;
+  padding: 1rem;
+
+  &--month {}
+  &--day {}
+  &--year {}
+}

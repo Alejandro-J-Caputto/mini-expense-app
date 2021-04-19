@@ -5,4 +5,9 @@
 
 //COMPONENTS
 @import './base/base';
+@import '../components/expenses-item/expenses-item';
+@import '../components/expenses-date/expenses-date';
 @import '../components/expenses/expenses';
+
+//PAGES
+@import '../pages/MainPage/mainPage';
