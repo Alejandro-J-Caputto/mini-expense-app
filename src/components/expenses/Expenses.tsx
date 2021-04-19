@@ -2,14 +2,16 @@ import React, { useContext } from 'react'
 import { ExpenseAppContext } from '../../contexts/ExpenseAppContext'
 import { ExpensesItem } from '../expenses-item/ExpensesItem'
 
-export const Expenses = () => {
+export const Expenses: React.FC = () => {
 
-  const { expenses } = useContext(ExpenseAppContext)
+  const ExpenseContext = useContext(ExpenseAppContext)!;
+  const { expenseResults } = ExpenseContext;
 
+  console.log(expenseResults)
   return (
     <div>
       <h1>hello expenses</h1>
-      {expenses.map(({ expense, price, date }) => {
+      {expenseResults.map(({ expense, price, date }) => {
         return <ExpensesItem key={expense}
           expense={expense}
           price={price}

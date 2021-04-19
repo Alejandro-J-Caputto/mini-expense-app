@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ExpensesDate = ({ date }) => {
+export const ExpensesDate:React.FC <{date: Date}>= ({ date }) => {
   const month = date.toLocaleString('de-CH', { month: 'long' });
   const day = date.toLocaleString('de-CH', { day: '2-digit' });
   const year = date.getFullYear();

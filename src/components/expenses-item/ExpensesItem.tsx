@@ -1,11 +1,7 @@
 import React from 'react'
 import { ExpensesDate } from '../expenses-date/ExpensesDate'
-
-export const ExpensesItem = ({ expense, price, date }) => {
-
-
-
-
+import {ExpenseItems} from '../../services/expensesService/useExpenseService'
+export const ExpensesItem:React.FC<ExpenseItems>  = ({date, expense, price }) => {
   return (
     <div className="expense-item">
       <ExpensesDate date={date}></ExpensesDate>
