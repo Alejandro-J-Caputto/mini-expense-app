@@ -10,11 +10,11 @@ export interface NewExpense {
   date: Date,
   price: number
 }
-export const ExpenseForms = ({onSubmittedExpense}:{onSubmittedExpense:(expenseForm:NewExpense)=> void}) => {
+export const ExpenseForms = ({ onSubmittedExpense }: { onSubmittedExpense: (expenseForm: NewExpense) => void }) => {
 
   const { formValues, handleInputChange, reset, customValidator } = useForm<ExpenseForm>({ expense: '', date: new Date().toISOString().split('T')[0], price: 0.1 })
   const { expense, date, price } = formValues;
- 
+
   const expenseIsValid: Validatable = {
     value: expense,
     required: true,
@@ -29,16 +29,16 @@ export const ExpenseForms = ({onSubmittedExpense}:{onSubmittedExpense:(expenseFo
     value: date,
     required: true
   }
-  const submitHandler = (e:React.FormEvent) => {
+  const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('me submité patata');
 
-    if(!customValidator(expenseIsValid) || !customValidator(priceIsValid) || !customValidator(dateIsValid)) return alert('Field no valido')
+    if (!customValidator(expenseIsValid) || !customValidator(priceIsValid) || !customValidator(dateIsValid)) return alert('Field no valido')
 
     const newExpense = new ExpenseModel(new Date(date), expense, price)
     console.log(date)
     onSubmittedExpense(newExpense);
-    
+
     reset()
   }
 

@@ -43,11 +43,6 @@ export const useForm = <T extends Object>(initialState: T) => {
     return isValid
 
   }
-  // const isValid = (arrInputs:[]) => {
-  //   for (const input of arrInputs) {
-      
-  //   }
-  // }
 
   return { formValues, handleInputChange, reset, customValidator }
 }
