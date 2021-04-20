@@ -1,11 +1,9 @@
 import React from 'react'
 import { ExpensesDate } from '../expenses-date/ExpensesDate'
 import {ExpenseItems} from '../../services/expensesService/useExpenseService'
-import { expenseAction } from '../../reducers/expenseActions'
-
 
 interface ExpenseItemsAction extends ExpenseItems {
-  dispatchExpense:  React.Dispatch<{
+  dispatchExpense?:  React.Dispatch<{
     type: string;
     payload: ExpenseItems;
 }>
@@ -15,10 +13,6 @@ export const ExpensesItem:React.FC<ExpenseItemsAction>  = ({date, expense, price
 
   const clickExpenseItemHandler = (e:React.MouseEvent) => {
     console.log('me clicke desde el item')
-    // const value = expenseAction('changeTitle', expense)!;
-    // console.log(value)
-    // dispatchExpense(value)
-
   }
   return (
     <div onClick={clickExpenseItemHandler} className="expense-item">

@@ -1,13 +1,15 @@
 @import './abstracts/functions';
 @import './abstracts/mixins';
 @import './abstracts/variables';
+@import './componentsUI/btn';
 
 
 //COMPONENTS
 @import './base/base';
 @import '../components/expenses-item/expenses-item';
 @import '../components/expenses-date/expenses-date';
-@import '../components/expenses/expenses';
-
+@import '../components/expensesCard/expenses';
+@import '../components/newExpense/newExpense';
+@import '../components/expenses-form/expenseForm';
 //PAGES
 @import '../pages/MainPage/mainPage';

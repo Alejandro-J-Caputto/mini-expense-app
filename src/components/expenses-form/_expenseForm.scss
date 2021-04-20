@@ -1,0 +1,38 @@
+.expense-form {
+  display: flex;
+  background-color: $color-black-settle;
+  flex: 1;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: $shadow-dark;
+  &__controls {
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__control {
+    margin-top: 1rem;
+    display: flex;
+    flex: 0 0 45%;
+    flex-direction: column;
+    & input {
+      padding: 1rem;
+      font-family: inherit;
+    }
+    & input[type='date'] {
+      padding: .8rem;
+      font-family: inherit;
+    }
+    & label {
+      display: none;
+    }
+  }
+  &__action {
+    display: flex;
+    flex: 0 0 45%;
+    padding: 1rem;
+    justify-content: center;
+  }
+}
+
+

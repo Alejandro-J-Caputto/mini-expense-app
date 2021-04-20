@@ -1,6 +1,5 @@
 .expense-item {
   cursor: pointer;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,13 +9,10 @@
   border-radius: 12px;
   background-color: #4b4b4b;
   transition: transform .2s;
+  flex-wrap: wrap;
   &:hover {
     transform: scale(1.1);
   }
-
-
-  
-  
 
   & h2 {
     // color: #3a3a3a;

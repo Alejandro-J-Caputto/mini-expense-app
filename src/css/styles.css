@@ -1,3 +1,20 @@
+.btn {
+  padding: 1rem;
+  border-radius: .7rem;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: background-color .2s; }
+  .btn:hover {
+    background-color: #28b485; }
+  .btn:focus {
+    outline: none; }
+
+.btn--expense-form {
+  background-color: #7ed56f;
+  color: white;
+  font-family: inherit;
+  font-weight: bolder; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -47,7 +64,8 @@ body {
   margin: 1rem 0;
   border-radius: 12px;
   background-color: #4b4b4b;
-  transition: transform .2s; }
+  transition: transform .2s;
+  flex-wrap: wrap; }
   .expense-item:hover {
     transform: scale(1.1); }
   .expense-item h2 {
@@ -86,6 +104,36 @@ body {
       .expense-item__price {
         font-size: 1.25rem;
         padding: 0.5rem 1.5rem; } }
+
+.expense-form {
+  display: flex;
+  background-color: #4b4b4b;
+  flex: 1;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3); }
+  .expense-form__controls {
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap; }
+  .expense-form__control {
+    margin-top: 1rem;
+    display: flex;
+    flex: 0 0 45%;
+    flex-direction: column; }
+    .expense-form__control input {
+      padding: 1rem;
+      font-family: inherit; }
+    .expense-form__control input[type='date'] {
+      padding: .8rem;
+      font-family: inherit; }
+    .expense-form__control label {
+      display: none; }
+  .expense-form__action {
+    display: flex;
+    flex: 0 0 45%;
+    padding: 1rem;
+    justify-content: center; }
 
 .main {
   background-color: #f4f2f2;

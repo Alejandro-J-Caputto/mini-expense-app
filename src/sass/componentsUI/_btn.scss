@@ -1,0 +1,20 @@
+.btn {
+  padding: 1rem;
+  border-radius: .7rem;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: background-color .2s;
+  &:hover{
+    background-color: $color-green-dark;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn--expense-form {
+  background-color: $color-green-light;
+  color: white;
+  font-family: inherit;
+  font-weight: bolder;
+}
