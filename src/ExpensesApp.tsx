@@ -7,7 +7,7 @@ import { useExpenseService } from './services/expensesService/useExpenseService'
 export const ExpensesApp = () => {
 
   const initialExpenses = () => JSON.parse(localStorage.getItem('expenses')!) || [];
-  
+
   const [expenseResults, dispatchExpense] = useReducer(expenseReducer, useExpenseService().expensesAPI, initialExpenses)
   return (
     <div>

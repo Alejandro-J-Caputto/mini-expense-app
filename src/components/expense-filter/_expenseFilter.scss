@@ -1,0 +1,28 @@
+.expense-filter {
+  padding: 0 1rem;
+  color: white;
+  font-size: 2rem;
+  background-color: $color-pink;
+  border-radius: 7px;
+
+  &__control {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  & label {
+    font-weight: bolder;
+    margin-bottom: .5rem;
+    margin-right: 1rem;
+  }
+  & select {
+    font:inherit;
+    cursor: pointer;
+    padding: .5rem 3rem;
+    font-weight: bold;
+    border-radius: 7px;
+  }
+}

@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react'
 export interface Validatable {
-  value: string | number;
+  value: string | number | Date;
   required?: boolean;
   minLength?: number;
   maxLength?: number;

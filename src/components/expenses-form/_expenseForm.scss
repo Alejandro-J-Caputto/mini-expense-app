@@ -9,6 +9,7 @@
     justify-content: space-around;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
   }
   &__control {
     margin-top: 1rem;
@@ -30,8 +31,13 @@
   &__action {
     display: flex;
     flex: 0 0 45%;
-    padding: 1rem;
+    // padding: .7rem;
+    margin-top: 1rem;
     justify-content: center;
+    & button {
+      width: 100%;
+      padding: 1rem 1.4rem;
+    }
   }
 }
 

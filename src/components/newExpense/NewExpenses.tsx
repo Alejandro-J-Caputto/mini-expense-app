@@ -6,14 +6,13 @@ import { ExpenseForms, NewExpense } from '../expenses-form/ExpenseForms'
 
 export const NewExpenses = () => {
   const ExpenseContext = useContext(ExpenseAppContext)!;
-  const {dispatchExpense } = ExpenseContext;
-  
+  const { dispatchExpense } = ExpenseContext;
 
-  const onSubmittedExpense = (expense:NewExpense) => {
-   
+
+  const onSubmittedExpense = (expense: NewExpense) => {
+
     const value = expenseAction('addExpense', expense);
     dispatchExpense(value!)
-    console.log(value)
   }
   return (
     <div className="newExpense">
