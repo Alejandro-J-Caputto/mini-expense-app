@@ -6,8 +6,9 @@ import { useExpenseService } from './services/expensesService/useExpenseService'
 
 export const ExpensesApp = () => {
 
-  // const [expenseResults, setExpensesResults] = useState<ExpenseItems[]>(useExpenseService().expensesAPI)
-  const [expenseResults, dispatchExpense] = useReducer(expenseReducer, useExpenseService().expensesAPI)
+  const initialExpenses = () => JSON.parse(localStorage.getItem('expenses')!) || [];
+  
+  const [expenseResults, dispatchExpense] = useReducer(expenseReducer, useExpenseService().expensesAPI, initialExpenses)
   return (
     <div>
       <ExpenseAppContext.Provider value={{expenseResults, dispatchExpense, useExpenseService}}>

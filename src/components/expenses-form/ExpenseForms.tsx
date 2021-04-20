@@ -1,5 +1,5 @@
 import { ExpenseModel } from '../../classes/expenseModel';
-import { useForm } from '../../hooks/useForm';
+import { useForm, Validatable } from '../../hooks/useForm';
 export interface ExpenseForm {
   expense: string,
   date: string,
@@ -12,12 +12,29 @@ export interface NewExpense {
 }
 export const ExpenseForms = ({onSubmittedExpense}:{onSubmittedExpense:(expenseForm:NewExpense)=> void}) => {
 
-  const { formValues, handleInputChange, reset } = useForm<ExpenseForm>({ expense: '', date: new Date().toISOString().split('T')[0], price: 0.1 })
+  const { formValues, handleInputChange, reset, customValidator } = useForm<ExpenseForm>({ expense: '', date: new Date().toISOString().split('T')[0], price: 0.1 })
   const { expense, date, price } = formValues;
-
+ 
+  const expenseIsValid: Validatable = {
+    value: expense,
+    required: true,
+    minLength: 3
+  }
+  const priceIsValid: Validatable = {
+    value: price,
+    required: true,
+    min: 0.1
+  }
+  const dateIsValid: Validatable = {
+    value: date,
+    required: true
+  }
   const submitHandler = (e:React.FormEvent) => {
     e.preventDefault();
     console.log('me submité patata');
+
+    if(!customValidator(expenseIsValid) || !customValidator(priceIsValid) || !customValidator(dateIsValid)) return alert('Field no valido')
+
     const newExpense = new ExpenseModel(new Date(date), expense, price)
     console.log(date)
     onSubmittedExpense(newExpense);

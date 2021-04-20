@@ -1,9 +1,11 @@
 import React from 'react'
 
 export const ExpensesDate:React.FC <{date: Date}>= ({ date }) => {
-  const month = date.toLocaleString('de-CH', { month: 'long' });
-  const day = date.toLocaleString('de-CH', { day: '2-digit' });
-  const year = date.getFullYear();
+  
+  const transFormDate = new Date(date)
+  const month = transFormDate.toLocaleString('de-CH', { month: 'long' });
+  const day = transFormDate.toLocaleString('de-CH', { day: '2-digit' });
+  const year = transFormDate.toLocaleString('de-CH', { year: 'numeric'});
   return (
     <div>
       <div className="expense-item__date">

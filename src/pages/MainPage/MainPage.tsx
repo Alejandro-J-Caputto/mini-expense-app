@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import { ExpenseAppContext } from '../../contexts/ExpenseAppContext'
 import { ExpensesItem } from '../../components/expenses-item/ExpensesItem'
@@ -9,6 +9,10 @@ import { NewExpenses } from '../../components/newExpense/NewExpenses'
 export const MainPage = () => {
   const ExpenseContext = useContext(ExpenseAppContext)!;
   const { expenseResults, dispatchExpense } = ExpenseContext;
+
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(expenseResults));
+  }, [expenseResults])
 
   return (
     <div className="main">
