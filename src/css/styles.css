@@ -144,7 +144,7 @@ body {
   align-items: center; }
 
 .container {
-  background-color: aquamarine;
+  background-color: #777;
   width: 57rem;
   border-radius: 5rem;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
