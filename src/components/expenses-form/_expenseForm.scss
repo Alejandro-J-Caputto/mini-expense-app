@@ -20,8 +20,8 @@
       padding: 1rem;
       font-family: inherit;
     }
-    & input[type='date'] {
-      padding: .8rem;
+    & input[type="date"] {
+      padding: 0.8rem;
       font-family: inherit;
     }
     & label {
@@ -34,11 +34,29 @@
     // padding: .7rem;
     margin-top: 1rem;
     justify-content: center;
+    &:not(:last-child) {
+      margin-right: 2px;
+    }
     & button {
       width: 100%;
-      padding: 1rem 1.4rem;
+      padding: 0.6rem 1.4rem;
+    }
+    &--menu {
+      margin-top: 0;
+      // padding: 2rem 8rem;
+
+      flex: 0 0 100%;
+      align-items: center;
     }
   }
 }
 
-
+.btn--expense--menu {
+  height: 5rem;
+}
+.btn--expense-form--cancel {
+  background-color: $color-angular-light;
+  &:hover {
+    background-color: $color-angular-darker;
+  }
+}

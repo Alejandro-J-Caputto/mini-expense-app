@@ -139,8 +139,8 @@ body {
     .expense-form__control input {
       padding: 1rem;
       font-family: inherit; }
-    .expense-form__control input[type='date'] {
-      padding: .8rem;
+    .expense-form__control input[type="date"] {
+      padding: 0.8rem;
       font-family: inherit; }
     .expense-form__control label {
       display: none; }
@@ -149,9 +149,23 @@ body {
     flex: 0 0 45%;
     margin-top: 1rem;
     justify-content: center; }
+    .expense-form__action:not(:last-child) {
+      margin-right: 2px; }
     .expense-form__action button {
       width: 100%;
-      padding: 1rem 1.4rem; }
+      padding: 0.6rem 1.4rem; }
+    .expense-form__action--menu {
+      margin-top: 0;
+      flex: 0 0 100%;
+      align-items: center; }
+
+.btn--expense--menu {
+  height: 5rem; }
+
+.btn--expense-form--cancel {
+  background-color: #cb2b39; }
+  .btn--expense-form--cancel:hover {
+    background-color: #b4252b; }
 
 .expense-filter {
   padding: 0 1rem;
