@@ -17,17 +17,24 @@ export const MainPage = () => {
     localStorage.setItem('expenses', JSON.stringify(expenseResults));
   }, [expenseResults])
 
+  const filteredExpenseResults = expenseResults.filter(exp => new Date(exp.date).getFullYear() === +filterYear)
+  
+
   const onSetYear = (year: string) => {
     setFilterYear(year);
   }
+
 
   return (
     <div className="main">
       <ExpensesCard className="container">
         <ExpenseFilter filterYear={filterYear} onSetYear={onSetYear}></ExpenseFilter>
         <NewExpenses></NewExpenses>
-        {expenseResults.filter(el => new Date(el.date).getFullYear() === +filterYear
-        ).map(({ id, expense, price, date }) => {
+        {!filteredExpenseResults.length ?
+        <div className="message-filter">
+          <p className="message-filter__notFound"> No expenses registered </p> 
+        </div> 
+        :filteredExpenseResults.map(({ id, expense, price, date }) => {
           return <ExpensesItem
             dispatchExpense={dispatchExpense}
             key={id}
@@ -35,7 +42,8 @@ export const MainPage = () => {
             price={price}
             date={date}
           ></ExpensesItem>
-        })}
+        })
+        }
       </ExpensesCard>
     </div>
   )

@@ -63,4 +63,17 @@
   
 
 }
-
+.message-filter{
+  color: $color-white;
+  display: flex;
+  flex: 1;
+  background-color: $color-yellow;
+  padding: 2rem;
+  margin-top: 1rem;
+  border-radius: 7px;
+  justify-content: center;
+}
+.message-filter__notFound{
+  font-size: 2rem;
+  font-weight: 600;
+}
