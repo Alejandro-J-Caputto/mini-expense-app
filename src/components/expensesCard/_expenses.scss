@@ -13,7 +13,9 @@
   &:hover {
     transform: scale(1.1);
   }
-
+  & * {
+    margin-right: 2px;
+  }
   & h2 {
     // color: #3a3a3a;
     font-size: 1.6rem;
@@ -28,34 +30,32 @@
 
   &__description {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    flex: 0 0 50%;
+    text-align: center;
+    border: 2px solid $color-white;
     border-radius: .5rem;
+    flex: 0 0 50%;
     padding: 3rem 1rem;
     background-color: $color-angular-blue-light;
     @include responsive (phone) {
       flex-direction: row;
       align-items: center;
       justify-content: flex-start;
-      flex: 1;
+      flex: 0 0 50%;
     }
   }
 
   &__price {
-
+    flex: 0 0 20%;
+    padding: 3rem 1rem;
     font-weight: bold;
     color: white;
     background-color: $color-yellow;
     border: 2px solid white;
-    width: 10rem;
-    text-align: center;
-    padding: 3rem 1rem;
     border-radius: 6px;
+    text-align: center;
     @include responsive (phone) {
       font-size: 1.25rem;
-      padding: 0.5rem 1.5rem;
+      // padding: 0.5rem 1.5rem;
     }
   }
 
@@ -66,7 +66,7 @@
 .message-filter{
   color: $color-white;
   display: flex;
-  flex: 1;
+  flex: 0;
   background-color: $color-yellow;
   padding: 2rem;
   margin-top: 1rem;

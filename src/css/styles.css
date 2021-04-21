@@ -68,6 +68,8 @@ body {
   flex-wrap: wrap; }
   .expense-item:hover {
     transform: scale(1.1); }
+  .expense-item * {
+    margin-right: 2px; }
   .expense-item h2 {
     font-size: 1.6rem;
     flex: 1;
@@ -78,11 +80,10 @@ body {
         font-size: 1.25rem; } }
   .expense-item__description {
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    flex: 0 0 50%;
+    text-align: center;
+    border: 2px solid #fff;
     border-radius: .5rem;
+    flex: 0 0 50%;
     padding: 3rem 1rem;
     background-color: #42a5f5; }
     @media (max-width: 37.5em) {
@@ -90,25 +91,24 @@ body {
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        flex: 1; } }
+        flex: 0 0 50%; } }
   .expense-item__price {
+    flex: 0 0 20%;
+    padding: 3rem 1rem;
     font-weight: bold;
     color: white;
     background-color: #edae2c;
     border: 2px solid white;
-    width: 10rem;
-    text-align: center;
-    padding: 3rem 1rem;
-    border-radius: 6px; }
+    border-radius: 6px;
+    text-align: center; }
     @media (max-width: 37.5em) {
       .expense-item__price {
-        font-size: 1.25rem;
-        padding: 0.5rem 1.5rem; } }
+        font-size: 1.25rem; } }
 
 .message-filter {
   color: #fff;
   display: flex;
-  flex: 1;
+  flex: 0;
   background-color: #edae2c;
   padding: 2rem;
   margin-top: 1rem;
@@ -236,10 +236,21 @@ body {
   justify-content: center;
   align-items: center;
   padding: 5rem; }
+  @media (max-width: 37.5em) {
+    .main {
+      padding: unset; } }
 
 .container {
   background-color: #777;
+  display: flex;
+  flex-flow: column;
   width: 57rem;
   border-radius: 5rem;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   padding: 5rem; }
+  @media (max-width: 37.5em) {
+    .container {
+      width: 100%;
+      height: 100vh;
+      border-radius: unset;
+      padding: 2rem; } }
