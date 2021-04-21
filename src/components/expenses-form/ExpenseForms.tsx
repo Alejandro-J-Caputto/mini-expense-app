@@ -16,7 +16,6 @@ export const ExpenseForms = ({ onSubmittedExpense }: { onSubmittedExpense: (expe
 
   const { formValues, handleInputChange, reset, customValidator } = useForm<ExpenseForm>({ expense: '', date: new Date(), price: 0.1 })
   const { expense, date, price } = formValues;
-  
   const [hideForm, setHideForm] = useState(true)
 
   const buttonFormHandler =<div className="expense-form__action expense-form__action--menu"><button onClick={()=> setHideForm(false)} className="btn btn--expense-form btn--expense--menu"> Add Expense </button></div> 
@@ -38,7 +37,6 @@ export const ExpenseForms = ({ onSubmittedExpense }: { onSubmittedExpense: (expe
   const submitHandler = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('me submité patata');
-
     if (!customValidator(expenseIsValid) || !customValidator(priceIsValid) || !customValidator(dateIsValid)) return alert('Field no valido')
 
     const newExpense = new ExpenseModel(new Date(date), expense, price)
@@ -79,7 +77,7 @@ export const ExpenseForms = ({ onSubmittedExpense }: { onSubmittedExpense: (expe
         <label htmlFor="date">Date</label>
         <input
           id="date"
-          value={date.toString()}
+          value={(typeof date !== 'string') ? `${date.getFullYear()}-${date.toLocaleString('de-CH', { month: '2-digit'})}-${date.toLocaleString('de-CH', {day: '2-digit'})}` : date }
           name="date"
           onChange={handleInputChange}
           type="date"

@@ -5,7 +5,7 @@ import { ExpensesItem } from '../../components/expenses-item/ExpensesItem'
 import { ExpensesCard } from '../../components/expensesCard/ExpensesCard'
 import { NewExpenses } from '../../components/newExpense/NewExpenses'
 import { ExpenseFilter } from '../../components/expense-filter/ExpenseFilter'
-import { ExpenseItems } from '../../services/expensesService/useExpenseService'
+import { ExpenseGraphic } from '../../components/expense-graphic/ExpenseGraphic'
 
 
 export const MainPage = () => {
@@ -46,6 +46,7 @@ export const MainPage = () => {
     <div className="main">
       <ExpensesCard className="container">
         <ExpenseFilter filterYear={filterYear} onSetYear={onSetYear}></ExpenseFilter>
+        <ExpenseGraphic filteredExpenseResults={filteredExpenseResults}></ExpenseGraphic>
         <NewExpenses></NewExpenses>
         {expenseListContent}
       </ExpensesCard>

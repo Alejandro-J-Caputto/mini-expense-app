@@ -11,7 +11,8 @@ export const useForm = <T extends Object>(initialState: T) => {
   const [formValues, setFormValues] = useState(initialState);
 
   const handleInputChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = target
+    let { name, value } = target
+
     setFormValues((prevValues) => {
       return {
         ...prevValues,
@@ -25,19 +26,19 @@ export const useForm = <T extends Object>(initialState: T) => {
 
   const customValidator = (validableInput: Validatable) => {
     let isValid = true;
-    if(validableInput.required) {
+    if (validableInput.required) {
       isValid = isValid && validableInput.value.toString().trim().length !== 0;
     }
-    if(validableInput.minLength != null && typeof validableInput.value === 'string') {
+    if (validableInput.minLength != null && typeof validableInput.value === 'string') {
       isValid = isValid && validableInput.value.length > validableInput.minLength
     }
-    if(validableInput.maxLength != null && typeof validableInput.value === 'string') {
+    if (validableInput.maxLength != null && typeof validableInput.value === 'string') {
       isValid = isValid && validableInput.value.length < validableInput.maxLength
     }
-    if(validableInput.min != null && typeof validableInput.value === 'number') {
+    if (validableInput.min != null && typeof validableInput.value === 'number') {
       isValid = isValid && validableInput.value > validableInput.min;
     }
-    if(validableInput.max != null && typeof validableInput.value === 'number') {
+    if (validableInput.max != null && typeof validableInput.value === 'number') {
       isValid = isValid && validableInput.value < validableInput.max
     }
     return isValid
